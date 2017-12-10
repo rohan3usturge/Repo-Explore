@@ -57,3 +57,7 @@ typings/
 # dotenv environment variables file
 .env
 
+#Build directories
+dist
+lib
+scss/*.d.ts
