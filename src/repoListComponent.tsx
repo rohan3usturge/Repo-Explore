@@ -2,8 +2,7 @@ import * as React from "react";
 import GitRestClient = require("TFS/VersionControl/GitRestClient");
 import { GitRepository } from "vso-node-api/interfaces/TfvcInterfaces";
 import { WebContext } from "VSS/Common/Contracts/Platform";
-// tslint:disable-next-line:no-var-requires
-const appStyle =  require("./../scss/application.scss");
+import * as appStyle from "./../scss/application.scss";
 
 interface IRepoListState {
   repoList: GitRepository[];

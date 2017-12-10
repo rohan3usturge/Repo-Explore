@@ -49,21 +49,16 @@ module.exports = {
         use: [
           {
             loader: "style-loader" // creates style nodes from JS strings
-          },
-          {
-            loader: "css-loader" // translates CSS into CommonJS
+          },{
+            loader: "typings-for-css-modules-loader",
+            options: {
+              modules: true,
+              namedExport: true
+            }
           },
           {
             loader: "sass-loader" // compiles Sass to CSS
           }
-          // ,
-          // {
-          //   loader: "typings-for-css-modules-loader",
-          //   options: {
-          //     modules: true,
-          //     namedExport: true
-          //   }
-          // }
         ]
       }
     ]
