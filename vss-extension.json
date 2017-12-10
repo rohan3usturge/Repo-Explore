@@ -1,0 +1,80 @@
+{
+    "manifestVersion": 1,
+    "id": "rsu-repo-explore",
+    "version": "0.1.26",
+    "name": "Repo Explore",
+    "description": "Explore different repos based on tags and likes",
+    "publisher": "rohan-usturge",
+    "targets": [
+        {
+            "id": "Microsoft.VisualStudio.Services"
+            }
+        ],
+    "icons": {
+        "default": "images/logo.png"
+     },
+    "contributions": [
+        {
+            "id": "rsu.repo-explore.explore-hub",
+            "type": "ms.vss-web.hub-group",
+            "description": "Adds a Explore hub to the main hub group. Next to code, work, build and release etc.",
+            "targets": [
+                "ms.vss-web.project-hub-groups-collection"
+                ],
+            "properties": {
+                "name": "Explore",
+                "order": 99,
+                "uri": "html/explore-repo.html"
+            }
+        },
+        {
+            "id": "rsu.repo-explore.repo-search",
+            "type": "ms.vss-web.hub",
+            "description": "Search repos under explore.",
+            "targets": [
+                ".rsu.repo-explore.explore-hub"
+            ],
+            "properties": {
+                "name": "Search Repo",
+                "order": 100,
+                "uri": "html/explore-repo.html"
+            }
+        },{
+            "id": "rsu.repo-explore.repo-home",
+            "type": "ms.vss-web.hub",
+            "description": "Information About Repo and Actions can be taken. Home for a repo.",
+            "targets": [
+                "ms.vss-code-web.code-hub-group"
+            ],
+            "properties": {
+                "name": "Home",
+                "order": 0,
+                "uri": "html/explore-repo.html",
+                "isDefault" : true,
+                "builtIn" : true,
+                "afterSeparator" : false,
+                "beforeSeparator" : false
+            }
+        }
+    ],
+    "scopes": [
+        "vso.code"
+    ],
+    "files": [
+        {
+            "path": "html/explore-repo.html", "addressable": true
+        },
+        {
+            "path": "html/home-repo.html", "addressable": true
+        },
+        {
+            "path": "dist", "addressable": true
+        },
+        {
+            "path": "sdk/scripts", "addressable": true
+        },
+        {
+            "path": "images/logo.png", "addressable": true
+        }
+    ]
+}

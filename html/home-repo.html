@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Explore Repos</title>
+    <script src="../sdk/scripts/VSS.SDK.js"></script>
+</head>
+<body>
+    <script type="text/javascript">
+        VSS.init({
+            explicitNotifyLoaded: true,
+            setupModuleLoader: true,
+            usePlatformScripts: true,
+            usePlatformStyles: true
+        });
+        VSS.ready(function () {
+            require(["dist/bundle"],function(M){
+                var main = new M.Main();
+            });
+            VSS.notifyLoadSucceeded();
+            // var context = app.getContext();
+            // document.getElementById('rohan-container').innerHTML = JSON.stringify(context);
+        });
+    </script>
+    <h1>Explore Repos</h1>
+    <div id="rohan-container"></div>
+</body>
+</html>

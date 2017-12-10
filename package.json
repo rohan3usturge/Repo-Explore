@@ -1,0 +1,60 @@
+{
+  "name": "repo-explore",
+  "version": "1.0.0",
+  "description": "Visual Studio Team Services Extension for adding tags, exploring Repos, watching, starring ( add to favorites ) repos within a visual studio account.",
+  "main": "index.js",
+  "scripts": {
+    "build": "npm run lint && npm run clean && npm run webpack",
+    "dev": "npm run lint && npm run clean && npm run webpackwatch",
+    "clean": "rimraf ./dist && rimraf ./*.vsix",
+    "gallery-publish": "npm run build && tfx extension publish --rev-version --token mi244imrtmzyhxtiych23wf2e6titzfffbdhm25my5p3bob6el4q",
+    "lint": "tslint -c tslint.json 'src/*.ts'",
+    "package": "tfx extension create  --rev-version",
+    "postbuilddemo": "npm run package",
+    "webpack": "webpack --progress --colors --config webpack.config.js --output-path ./dist -p",
+    "webpackwatch": "webpack --watch --progress --colors --config webpack.config.js --output-path ./dist -p",
+    "compiletests": "tsc ./tests/CountdownCalculatorSpec.ts",
+    "runtests": "jasmine-node --test-dir ./tests --verbose --junitreport --output ./reportTests/",
+    "runcovertests": "istanbul cover --hook-run-in-context --report cobertura --report html node_modules/jasmine-node/bin/jasmine-node --test-dir ./tests --verbose --junitreport --output ./reportTests/",
+    "inlinesource": "gulp inlinesource",
+    "pretest": "rimraf ./reportTests && rimraf ./coverage",
+    "test": "npm run compiletests && npm run runtests && npm run runcovertests",
+    "posttest": "npm run inlinesource"
+  },
+  "keywords": [
+    "vsts",
+    "extension",
+    "github",
+    "watch",
+    "star",
+    "follow",
+    "explore",
+    "trending",
+    "repos",
+    "repo",
+    "repository"
+  ],
+  "author": "Rohan Usturge ( rohan.usturge@hotmail.com )",
+  "license": "ISC",
+  "devDependencies": {
+    "node-sass": "^4.7.2",
+    "sass-loader": "^6.0.6",
+    "ts-loader": "^3.2.0",
+    "tslint": "^5.8.0",
+    "typescript": "^2.6.2",
+    "vss-web-extension-sdk": "^4.126.2",
+    "webpack": "^3.10.0"
+  },
+  "dependencies": {
+    "@types/react": "^16.0.28",
+    "@types/react-dom": "^16.0.3",
+    "css-loader": "^0.28.7",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "style-loader": "^0.19.0",
+    "tfx-cli": "^0.4.11",
+    "tslint-loader": "^3.5.3",
+    "typings-for-css-modules-loader": "^1.7.0"
+  }
+}
