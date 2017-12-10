@@ -60,4 +60,6 @@ typings/
 #Build directories
 dist
 lib
+semantic
 scss/*.d.ts
+*.vsix

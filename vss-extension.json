@@ -1,7 +1,7 @@
 {
     "manifestVersion": 1,
     "id": "rsu-repo-explore",
-    "version": "0.1.27",
+    "version": "0.1.29",
     "name": "Repo Explore",
     "description": "Explore different repos based on tags and likes",
     "publisher": "rohan-usturge",

@@ -44,8 +44,7 @@ module.exports = {
         loader: "ts-loader"
       },
       {
-        test: /\.scss$/,
-        include: path.resolve('./scss'),        
+        test: /\.s?css$/,
         use: [
           {
             loader: "style-loader" // creates style nodes from JS strings
