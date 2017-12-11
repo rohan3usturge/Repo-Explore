@@ -1,9 +1,19 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
+
 <head>
     <title>Explore Repos</title>
     <script src="../sdk/scripts/VSS.SDK.js"></script>
+    <style>
+        html,
+        body,
+        #repo-search-container {
+            height: 100%;
+            width: 100%;
+        }
+    </style>
 </head>
+
 <body>
     <script type="text/javascript">
         VSS.init({
@@ -13,15 +23,15 @@
             usePlatformStyles: true
         });
         VSS.ready(function () {
-            require(["dist/bundle"],function(M){
-                var main = new M.Main();
+            require(["dist/repo-search-bundle"], function (M) {
+                var app = new M.RepoSearchApp();
+                app.run();
             });
             VSS.notifyLoadSucceeded();
-            // var context = app.getContext();
-            // document.getElementById('rohan-container').innerHTML = JSON.stringify(context);
         });
     </script>
     <h1>Explore Repos</h1>
-    <div id="rohan-container"></div>
+    <div id="repo-search-container"></div>
 </body>
+
 </html>

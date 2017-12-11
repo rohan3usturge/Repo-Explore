@@ -9,10 +9,13 @@ const extractSass = new ExtractTextPlugin({
 
 module.exports = {
   target: "web",
-  entry: __dirname + "/src/app.tsx",
+  entry: {
+    "repo-search" : path.join(path.resolve("./src"), "repo-search/RepoSearchApp.tsx"),
+    "repo-home" : path.join(path.resolve("./src"), "repo-home/RepoHomeApp.tsx")
+  },
   devtool: "inline-source-map",
   output: {
-    filename: "bundle.js",
+    filename: "[name]-bundle.js",
     libraryTarget: "amd"
   },
   externals: [
